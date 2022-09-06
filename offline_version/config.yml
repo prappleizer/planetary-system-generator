@@ -1,0 +1,27 @@
+name: Farudan System
+planets:
+  Farudan:
+    dist: 40
+    size: 2 
+    orbitals:
+      - Farudan Station
+      - Gia (M)
+  Aliasi:
+    dist: 60
+    size: 6
+  Mari: 
+    dist: 20
+    size: 1
+  Halicon:
+    dist: 85
+    size: 4.5
+    orbitals:
+      - Deselctron Mining Station
+
+asteroid_belts:
+  Altar Belt:
+    dist: 71
+    width: 1.1
+    density: high
+
+
