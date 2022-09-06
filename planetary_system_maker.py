@@ -141,6 +141,7 @@ with st.sidebar.form("my_form"):
     st.write('To set up a planetary system, enter the relevant parameters below. The tool uses the YAML format. An example system is provided --- you need toplevel defintions for name (of the system), planets, and asteroid belts. Within those, you can further specify parameters, as shown.')
     st.write('The spacing/indents are a little hard to see here, so you might try typing up your inputs in another file and pasting.')
     user_input = st.text_area("Enter YML form Configuration Here", value=test_str,height=660)
+    plot_sytle = st.radio('Style', ['light','dark'])
     submitted = st.form_submit_button("Submit")
 
 if submitted:
@@ -149,8 +150,8 @@ if submitted:
     planets = config['planets']
     asteroid_belts = config['asteroid_belts']
     fn = sys_name + '.png'
-    fig, ax = make_system(sys_name,planets,asteroid_belts=asteroid_belts,style='light')
-    fig.savefig(fn)
+    fig, ax = make_system(sys_name,planets,asteroid_belts=asteroid_belts,style=plot_style)
+    fig.savefig(fn,facecolor=fig.get_facecolor(), edgecolor='none')
     st.pyplot(fig,dpi=300)
     
 
